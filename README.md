@@ -11,9 +11,9 @@ Installation:
 Assuming that go is set up already, install following three dependencies
 before moving on. 
 
-go get "github.com/go-sql-driver/mysql"
+go get github.com/go-sql-driver/mysql
 
-go get "github.com/gin-gonic/gin"
+go get github.com/gin-gonic/gin
 
 go get github.com/wcharczuk/go-chart
 
