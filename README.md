@@ -20,17 +20,25 @@ go get github.com/wcharczuk/go-chart
 
 
 For client-server connection, Gin is used in this API. Gin is a HTTP web
-framework written in Go (Golang). It features a Martini-like API with much 
-better performance -- up to 40 times faster. 
+framework written in Go (Golang). If your data is big, processing time is
+important and here Gin serves you well with its performance. It is simple 
+to learn how Gin works but hard to master. It has a huge community of 
+followers and it is a mature framework having a development history of 2 years
+which probably makes it almost bug free Via Gin framework you can render
+your plots into your web-page easily unlike some other HTTP frameworks like Mux.
+This app requires parsing parameters from URL and it is easy to parse parameters
+with Gin. Gin has the same philosophy like httpRouter as it is built on top of 
+it which makes its performance better thanks to fast data passing between middlewares.
+So if performance is everything for you, Gin can serve you well.
 
-Before running the API, firstly create a database in MySQL explicitly. Then give
-the name of the database, MySQL username and password in  const variables section
-of createTables.go file. Also make sure that you are using port 3306 in MySQL. If
-that port is used by another application in your computer, you can change the port
-name in const variable list as well. Also 3232 port is used in the connection 
-between client and server using Gin framework. If another application is using that
-port in your computer, you need to change that port in const variables sections in
-both client and server package.
+Having told why I chose Gin, now, before running the API, firstly create a database
+in MySQL explicitly. Then give the name of the database, MySQL username and password
+in  const variables section of createTables.go file. Also make sure that you are using
+port 3306 in MySQL. If that port is used by another application in your computer, you
+can change the port name in const variable list as well. Also 3232 port is used in the
+connection between client and server using Gin framework. If another application is
+using that port in your computer, you need to change that port in const variables 
+sections in both client and server package.
 
 Now your server is ready to go.
 You can run the server. Gin-gonic creates the environment and port connection. When
