@@ -44,8 +44,8 @@ Now your server is ready to go.
 You can run the server. Gin-gonic creates the environment and port connection. When
 the app is run, at first database relations are created in MySQL in main method if
 they had not been created before by calling createTables() method just in the first
-line of main method. Then server listens for GET and POST requests. POST request is
-made for adding events and GET is for analyzing events.
+line of main method. Then server listens for GET and POST requests from the same port.
+POST request is made for adding events and GET is for analyzing events.
 
 In client package, there is a JSON data of 100 test events that can be sent to
 server to be stored in database automatically. You can do it by simply running 
@@ -58,12 +58,13 @@ a simpler structure so less markup overhead compated to XML
 Now run the the client side. Event logs from
 the JSON file will be automatically send to server and inserted to database using
 POST requests. JSON file can be updated to send more event definitions automatically.
-An example request can be defined as follows:
+An example POST request can be defined as follows:
 
 http://localhost:3232/event/?api_key=10&user_id=1&unix_timestamp=1485084687
 
-As a second option, event data can be sent via POST request manually using Postman
-application. You can download Postman from the following link:
+As a second option, event data can be sent via POST request manually. Postman
+application can be used for sending POST requests. You can download Postman 
+from the following link:
 https://www.getpostman.com/
 
 
