@@ -64,6 +64,7 @@ https://www.getpostman.com/
 An example POST request can be defined as follows:
 
 http://localhost:3232/event/?api_key=10&user_id=1&unix_timestamp=1485084687
+
 This POST request above, will be processed by server. Server will firstly check for error 
 conditions. All three parameters must be found in the URL. If at least one of them is missing, 
 server will return a proper error message. Also if any of the parameters is not integer, then server 
@@ -76,12 +77,13 @@ related api. In other words events that belong to the same API key are grouped i
 So the info of which user made the request for the related api and how much time passed for response
 will be saved in the related api's table which would be "api_key_10" table for this example request above.
 At last, response time of server will be saved in responsetimes table for future analysis. although actually
-response times are seved in related api's table, I also added these response times specifically in responsetimes
-table again to utilize data locality which is needed in a data analysis where all the response times info 
-is needed without considering api id's. So it would be faster retrive all the response times if only
-one table was processed. If you have enough storage area in your database, this approach is better in case
-of performance for retriving all response times data for analysis. It adds a small overhead during event
-insertion but it is a better approach if you need performance during analysis part. So this is actually 
+response times are seved in related api's table, I also added these response times specifically in
+responsetimes table again where all response times info are accumulated one more time in just one table
+to utilize data locality which is needed in a data analysis where all the response
+times info is needed without considering related api id's. So it would be faster retrive all the response times
+if only one table was processed. If you have enough storage area in your database, this approach is better
+in case of performance for retriving all response times data for analysis. It adds a small overhead during
+event insertion but it is a better approach if you need performance during analysis part. So this is actually 
 a trade-off decision that needed to be made.
 
 Now, Running the client side and having some event storage in database, analysis part 
