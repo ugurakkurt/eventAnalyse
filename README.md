@@ -36,7 +36,8 @@ Now your server is ready to go.
 You can run the server. Gin-gonic creates the environment and port connection. When
 the app is run, at first database relations are created in MySQL in main method if
 they had not been created before by calling createTables() method just in the first
-line of main method.
+line of main method. Then server listens for GET and POST requests. POST request is
+made for adding events and GET is for analyzing events.
 
 In client package, there is a JSON data of 100 test events that can be sent to
 server to be stored in database automatically. You can do it by simply running 
@@ -62,8 +63,10 @@ following:
 
 http://localhost:3232/event (change port number if yours is different)
 
-Now you will see a chart that shows percentages in correspondance to some specified
-intervals for the response times. You can analyze your event data using this chart.
+Now you will see a chart that shows percentages of events corresponding to some specified
+buckets in terms of their processing times. You can analyze your event data using this
+chart and customize it for yourself if you wish.
+
 
 
 
