@@ -50,7 +50,9 @@ made for adding events and GET is for analyzing events.
 In client package, there is a JSON data of 100 test events that can be sent to
 server to be stored in database automatically. You can do it by simply running 
 client.exe in client package. You can send your own event data by manipulating 
-the pre-created JSON file that is in the client package.
+the pre-created JSON file that is in the client package. JSON has a readable,
+user-friendly format and less grammer. JSON is processed quite fast as it has 
+a simpler structure so less markup overhead compated to XML 
 
 
 Now run the the client side. Event logs from
