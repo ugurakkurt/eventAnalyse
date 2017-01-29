@@ -1,5 +1,5 @@
 # EventAnalyser
-An event analyser RestAPI written in Golang. It is an analyze tool that can be used
+Event analyser is a RestAPI written in Golang. It is an analyze tool that can be used
 for storing and analyzing some specified type data using MySQL database technology.
 If you have some data for requests of specific users using specific apps and if you 
 want to analyze your response time per app in this data, then you can use this app
