@@ -9,9 +9,12 @@ ApiIds and response time info.
 Installation:
 
 Assuming that go is set up already, install following three dependencies
-before moving on.
+before moving on. Here go-chart library is used to analyze stored event data.
+
 go get "github.com/go-sql-driver/mysql"
+
 go get "github.com/gin-gonic/gin"
+
 go get github.com/wcharczuk/go-chart
 
 
