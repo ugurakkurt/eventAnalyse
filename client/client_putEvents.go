@@ -56,22 +56,22 @@ func handleErrorConditions(resp *http.Response) {
 	if resp.Header.Get("Answer") == "input_apiKeyMissing" {
 		fmt.Println(eventIndex, "- api key parameter is missing. Please specify the api key in your url.")
 	}
-	if resp.Header.Get("Answer") == "input_userIdMissing" {
+	else if resp.Header.Get("Answer") == "input_userIdMissing" {
 		fmt.Println(eventIndex, "- user id parameter is missing. Please specify the user id in your url.")
 	}
-	if resp.Header.Get("Answer") == "input_timeMissing" {
+	else if resp.Header.Get("Answer") == "input_timeMissing" {
 		fmt.Println(eventIndex, "- unix timestamp parameter is missing. Please specify unix timestamp in your url.")
 	}
-	if resp.Header.Get("Answer") == "input_userIdError" {
+	else if resp.Header.Get("Answer") == "input_userIdError" {
 		fmt.Println(eventIndex, "- User Id value must be integer")
 	}
-	if resp.Header.Get("Answer") == "apikeyNotFound" {
+	else if resp.Header.Get("Answer") == "apikeyNotFound" {
 		fmt.Println(eventIndex, "- The api key: (", resp.Header.Get("apikey"), ") does not exist in database")
 	}
-	if resp.Header.Get("Answer") == "input_TimeError" {
+	else if resp.Header.Get("Answer") == "input_TimeError" {
 		fmt.Println(eventIndex, "- Unix timestamp value must be integer")
 	}
-	if resp.Header.Get("Answer") == "input_apiKeyTypeError" {
+	else if resp.Header.Get("Answer") == "input_apiKeyTypeError" {
 		fmt.Println(eventIndex, "- The api key must be integer")
 	}
 }
