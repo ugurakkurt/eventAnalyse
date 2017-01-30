@@ -38,11 +38,9 @@ func main() {
 			panic(err)
 		}
 		//use response variable to check for messages from server side to handle error conditions
-
 		//first handle error conditions, server sends 404 Not Found response in case of errors
 		if resp.Status == "404 Not Found" {
 			handleErrorConditions(resp)
-
 		} else {
 			fmt.Println(eventIndex, "- Event is successfully saved in database.")
 		}
